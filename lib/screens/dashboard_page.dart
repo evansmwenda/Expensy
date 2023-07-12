@@ -1,9 +1,14 @@
 import 'package:expensy/screens/home_page.dart';
+import 'package:expensy/screens/profile_tab.dart';
+import 'package:expensy/utils/constants.dart';
 import 'package:expensy/widgets/sp_icon.dart';
 import 'package:flutter/material.dart';
 
+import 'home_tab.dart';
+
 class DashboardPage extends StatefulWidget {
-  const DashboardPage({super.key});
+  var currentIndex = 0;
+   DashboardPage({super.key});
 
   @override
   State<DashboardPage> createState() => _DashboardPageState();
@@ -12,50 +17,52 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
-    int currentIndex = 0;
-    List<Widget> pages = [
-      HomePage(),
-      ExpensePage(),
-      HomePage(),
-    ];
 
+
+    Widget buildTabContent(int index) {
+      print("running build ocntent $index");
+      switch (index) {
+        case 0:
+          return const HomeTab();
+        case 1:
+          return Container();
+        case 2:
+          return Container();
+        case 3:
+          return const ProfileTab();
+      }
+      return const HomeTab();
+    }
 
     return SafeArea(
       child: Scaffold(
-        body: pages[currentIndex],
+        body: buildTabContent(widget.currentIndex),
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: currentIndex,
-          selectedItemColor: Color(0xfffe416c),
+          currentIndex: widget.currentIndex,
+          selectedItemColor: secondaryDark,
+          unselectedItemColor: fontLight,
           selectedLabelStyle: TextStyle(fontSize: 13),
           onTap: (index) {
             setState(() {
-              currentIndex = index;
-              print("current index $index");
+              widget.currentIndex = index;
+              print("current index ${widget.currentIndex }");
             });
           },
           items: [
             BottomNavigationBarItem(
-              icon: SPIcon(
-                assetName: "logo-black.png",
-                index: 0,
-                currentIndex: currentIndex,
-              ),
+              icon: Image.asset("assets/icons/home-1.png"),
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: SPIcon(
-                assetName: "categories.png",
-                index: 1,
-                currentIndex: currentIndex,
-              ),
-              label: "Categories",
+              icon: Image.asset("assets/icons/chart-vertical.png"),
+              label: "Stat",
             ),
             BottomNavigationBarItem(
-              icon: SPIcon(
-                assetName: "profile.png",
-                index: 2,
-                currentIndex: currentIndex,
-              ),
+              icon: Image.asset("assets/icons/wallet.png"),
+              label: "Wallet",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset("assets/icons/user-1.png"),
               label: "Profile",
             ),
           ],
