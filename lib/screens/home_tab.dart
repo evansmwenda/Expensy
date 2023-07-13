@@ -1,7 +1,9 @@
+import 'package:expensy/data/user_info.dart';
 import 'package:expensy/utils/constants.dart';
 import 'package:expensy/widgets/income_expense_card.dart';
 import 'package:flutter/material.dart';
 
+import '../data/user_info.dart';
 import '../data/user_info.dart';
 import '../widgets/transaction_item_tile.dart';
 
@@ -120,7 +122,7 @@ class HomeTab extends StatelessWidget {
             const SizedBox(
               height: defaultSpacing / 2,
             ),
-            ...userdata.transactions.map((transaction) => TransactionItemTile(
+            ...userdata.transactions2.map((transaction) => TransactionItemTile(
               transaction: transaction,
             )),
           ],

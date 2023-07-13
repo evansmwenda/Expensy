@@ -82,9 +82,40 @@ List<Transaction> transactions = [
   // ),
 ];
 
+List<Transaction> transactions2 = [
+
+
+  Transaction(
+    categoryType: ItemCategoryType.grocery,
+    amount: "500",
+    itemCategoryName: "fruits",
+    itemName: "Uji Power",
+    transactionType: TransactionType.inflow,
+    date: "Mar, 02",
+  ),
+  Transaction(
+    categoryType: ItemCategoryType.rent,
+    amount: "2200",
+    itemCategoryName: "rent",
+    itemName: "House Rent",
+    transactionType: TransactionType.inflow,
+    date: "Feb, 12",
+  ),
+  Transaction(
+    categoryType: ItemCategoryType.kplc,
+    amount: "1200",
+    itemCategoryName: "prepaid",
+    itemName: "KPLC Token",
+    transactionType: TransactionType.inflow,
+    date: "Jun, 29",
+  ),
+];
+
 final userdata = UserInfo(
     name: "Morris",
     totalBalance: "KES 4,500",
     inflow: "400",
     outflow: "500",
-    transactions: transactions);
+    transactions: transactions,
+    transactions2: transactions2,
+);
