@@ -1,7 +1,5 @@
-import 'package:expensy/screens/home_page.dart';
 import 'package:expensy/screens/profile_tab.dart';
 import 'package:expensy/utils/constants.dart';
-import 'package:expensy/widgets/sp_icon.dart';
 import 'package:flutter/material.dart';
 
 import 'home_tab.dart';

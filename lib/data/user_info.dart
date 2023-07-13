@@ -40,10 +40,46 @@ class Transaction {
 }
 
 List<Transaction> transactions = [
-  Transaction(categoryType: ItemCategoryType.fashion,amount: "200",itemCategoryName: "shoes",itemName: "Puma Sneaker",transactionType: TransactionType.inflow,date: "Oct, 22",),
-  Transaction(categoryType: ItemCategoryType.grocery,amount: "500",itemCategoryName: "fruits",itemName: "Uji Power",transactionType: TransactionType.inflow,date: "Mar, 02",),
-  Transaction(categoryType: ItemCategoryType.rent,amount: "2200",itemCategoryName: "rent",itemName: "House Rent",transactionType: TransactionType.inflow,date: "Feb, 12",),
-  Transaction(categoryType: ItemCategoryType.kplc,amount: "1200",itemCategoryName: "prepaid",itemName: "KPLC Token",transactionType: TransactionType.inflow,date: "Jun, 29",),
+  Transaction(
+    amount: "20.00",
+    categoryType: ItemCategoryType.grocery,
+    transactionType: TransactionType.outflow,
+    itemCategoryName: "Groceries",
+    itemName: "Kales",
+    date: "21-04-2023",
+  ),
+  Transaction(
+    categoryType: ItemCategoryType.fashion,
+    amount: "200",
+    itemCategoryName: "shoes",
+    itemName: "Puma Sneaker",
+    transactionType: TransactionType.inflow,
+    date: "Oct, 22",
+  ),
+  // Transaction(
+  //   categoryType: ItemCategoryType.grocery,
+  //   amount: "500",
+  //   itemCategoryName: "fruits",
+  //   itemName: "Uji Power",
+  //   transactionType: TransactionType.inflow,
+  //   date: "Mar, 02",
+  // ),
+  // Transaction(
+  //   categoryType: ItemCategoryType.rent,
+  //   amount: "2200",
+  //   itemCategoryName: "rent",
+  //   itemName: "House Rent",
+  //   transactionType: TransactionType.inflow,
+  //   date: "Feb, 12",
+  // ),
+  // Transaction(
+  //   categoryType: ItemCategoryType.kplc,
+  //   amount: "1200",
+  //   itemCategoryName: "prepaid",
+  //   itemName: "KPLC Token",
+  //   transactionType: TransactionType.inflow,
+  //   date: "Jun, 29",
+  // ),
 ];
 
 final userdata = UserInfo(
@@ -51,4 +87,4 @@ final userdata = UserInfo(
     totalBalance: "KES 4,500",
     inflow: "400",
     outflow: "500",
-    transactions: <Transaction>[]);
+    transactions: transactions);
