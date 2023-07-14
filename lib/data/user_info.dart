@@ -13,13 +13,16 @@ class UserInfo {
   final String inflow;
   final String outflow;
   final List<Transaction> transactions;
+  final List<Transaction> transactions2;
 
   UserInfo(
       {required this.name,
       required this.totalBalance,
       required this.inflow,
       required this.outflow,
-      required this.transactions});
+      required this.transactions,
+      required this.transactions2,
+      });
 }
 
 class Transaction {

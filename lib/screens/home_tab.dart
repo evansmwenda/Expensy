@@ -41,7 +41,7 @@ class HomeTab extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "\$ ${userdata.totalBalance}",
+                    userdata.totalBalance,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           fontWeight: FontWeight.w800,
                         ),
@@ -69,7 +69,7 @@ class HomeTab extends StatelessWidget {
                     child: IncomeExpenseCard(
                   expenseData: ExpenseData(
                     label: "Income",
-                    amount: "\$ ${userdata.inflow}",
+                    amount: userdata.inflow,
                     icon: Icons.arrow_upward_rounded,
                   ),
                 )),
@@ -80,7 +80,7 @@ class HomeTab extends StatelessWidget {
                     child: IncomeExpenseCard(
                   expenseData: ExpenseData(
                     label: "Expense",
-                    amount: "-\$ ${userdata.outflow}",
+                    amount: userdata.outflow,
                     icon: Icons.arrow_downward_rounded,
                   ),
                 )),
@@ -104,9 +104,7 @@ class HomeTab extends StatelessWidget {
                 color: fontSubHeading,
               ),
             ),
-            const SizedBox(
-              height: defaultSpacing / 2,
-            ),
+
             ...userdata.transactions.map((transaction) => TransactionItemTile(
               transaction: transaction,
             )),
@@ -119,9 +117,7 @@ class HomeTab extends StatelessWidget {
                 color: fontSubHeading,
               ),
             ),
-            const SizedBox(
-              height: defaultSpacing / 2,
-            ),
+
             ...userdata.transactions2.map((transaction) => TransactionItemTile(
               transaction: transaction,
             )),

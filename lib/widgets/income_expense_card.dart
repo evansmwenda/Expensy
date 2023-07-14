@@ -22,6 +22,14 @@ class IncomeExpenseCard extends StatelessWidget {
     return Container(
       height: 80,
       decoration: BoxDecoration(
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 12,
+            offset: Offset.zero,
+            spreadRadius: 3,
+          )
+        ],
         color: expenseData.label == "Income" ? primaryDark : accent,
         borderRadius: const BorderRadius.all(
           Radius.circular(defaultRadius),

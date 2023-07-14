@@ -1,13 +1,34 @@
+import 'dart:math';
+
 import 'package:expensy/data/user_info.dart';
 import 'package:flutter/material.dart';
 import '../utils/constants.dart';
 
 class TransactionItemTile extends StatelessWidget {
   final Transaction transaction;
-  const TransactionItemTile({super.key,required this.transaction,});
+  const TransactionItemTile({
+    super.key,
+    required this.transaction,
+  });
+
+  String getSign(TransactionType type) {
+    switch (type) {
+      case TransactionType.inflow:
+        return "+";
+      case TransactionType.outflow:
+        return "-";
+      default:
+        return "";
+    }
+  }
+
+  Color getRandomColor(){
+    return Color(Random().nextInt(0xFF000000));
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       margin: const EdgeInsets.symmetric(vertical: defaultSpacing / 2),
       decoration: const BoxDecoration(
@@ -39,23 +60,28 @@ class TransactionItemTile extends StatelessWidget {
         ),
         leading: Container(
           padding: const EdgeInsets.all(defaultSpacing / 2),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(
               Radius.circular(defaultRadius / 2),
             ),
-            color: Colors.red,
+            color: getRandomColor(),
           ),
-          child: transaction.categoryType == ItemCategoryType.fashion ? const Icon(Icons.supervised_user_circle_sharp) : const Icon(Icons.house),
+          child: transaction.categoryType == ItemCategoryType.fashion
+              ? const Icon(Icons.supervised_user_circle_sharp)
+              : const Icon(Icons.house),
         ),
         trailing: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              transaction.amount,
+              "${getSign(transaction.transactionType)} ${transaction.amount}",
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: transaction.transactionType == TransactionType.outflow ? Colors.red : fontHeading,
-                    fontSize: fontSizeTitle,
+                    color:
+                        transaction.transactionType == TransactionType.outflow
+                            ? Colors.red
+                            : fontHeading,
+                    fontSize: fontSizeBody,
                     fontWeight: FontWeight.w600,
                   ),
             ),
