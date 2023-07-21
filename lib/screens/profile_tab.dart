@@ -44,47 +44,52 @@ class ProfileTab extends StatelessWidget {
                 flex: 2,
                 child: ListView(
                   children: [
-                    Text(
-                      "General",
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w600,
+                    Padding(
+                      padding: const EdgeInsets.only(left: defaultSpacing),
+                      child: Text(
+                        "General",
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
+                    // const SizedBox(height: defaultSpacing,),
                     const SettingsItemTile(
-                      icon: Icons.edit_location_rounded,
+                      imageUrl: "assets/icons/location-1.png",
                       title: "Bank Location",
-                      subtitle: "7307, Grant Flashing NY23563",
+                      subtitle: "7307, Grant Avenue, Flashing NY23563",
                     ),
                     const SettingsItemTile(
-                      icon: Icons.edit_location_rounded,
+                      imageUrl: "assets/icons/wallet.png",
                       title: "My Wallet",
                       subtitle: "Manage your saved wallet",
                     ),
-                    Text(
-                      "General",
-                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        fontWeight: FontWeight.w600,
+                    const SizedBox(height: defaultSpacing,),
+                    Padding(
+                      padding: const EdgeInsets.only(left: defaultSpacing),
+                      child: Text(
+                        "Account",
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
-                    const SettingsItemTile(
-                      icon: Icons.edit_location_rounded,
+                    const AccountsItemTile(
+                      imageUrl: "assets/icons/user-1.png",
                       title: "My Account",
-                      subtitle: "test",
+                      // subtitle: "test",
                     ),
-                    const SettingsItemTile(
-                      icon: Icons.edit_location_rounded,
+                    const AccountsItemTile(
+                      imageUrl: "assets/icons/bell.png",
                       title: "Notification",
-                      subtitle: "test",
                     ),
-                    const SettingsItemTile(
-                      icon: Icons.edit_location_rounded,
+                    const AccountsItemTile(
+                      imageUrl: "assets/icons/lock-on.png",
                       title: "Privacy",
-                      subtitle: "test",
                     ),
-                    const SettingsItemTile(
-                      icon: Icons.edit_location_rounded,
+                    const AccountsItemTile(
+                      imageUrl: "assets/icons/info-circle.png",
                       title: "About",
-                      subtitle: "test",
                     ),
                   ],
                 ),

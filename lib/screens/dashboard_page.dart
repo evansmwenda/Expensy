@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'home_tab.dart';
 
 class DashboardPage extends StatefulWidget {
-  var currentIndex = 0;
+  var currentIndex = 3;
    DashboardPage({super.key});
 
   @override
