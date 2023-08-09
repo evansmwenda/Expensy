@@ -2,6 +2,7 @@ import 'package:expensy/data/user_info.dart';
 import 'package:expensy/utils/constants.dart';
 import 'package:expensy/widgets/income_expense_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import '../widgets/transaction_item_tile.dart';
 
 class HomeTab extends StatelessWidget {
@@ -26,10 +27,10 @@ class HomeTab extends StatelessWidget {
                 borderRadius: const BorderRadius.all(
                   Radius.circular(defaultRadius),
                 ),
-                child: Image.asset("assets/images/plus.png",height: 30,),
+                child: SvgPicture.asset("assets/icons/plus.svg",height: 30,),
               ),
-              trailing: Image.asset(
-                "assets/icons/info-circle.png",
+              trailing: SvgPicture.asset(
+                "assets/icons/info-circle.svg",
                 color: Colors.black,
               ),
             ),

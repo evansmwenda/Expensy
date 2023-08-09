@@ -37,6 +37,10 @@ class _DashboardPageState extends State<DashboardPage> {
       child: Scaffold(
         body: buildTabContent(widget.currentIndex),
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.blue,
+          elevation: 0,
+          // shape: CircularNotchedRectangle(), //shape of notch
+          // notchMargin: 5, //notche margin between floating button and bottom appbar
           currentIndex: widget.currentIndex,
           selectedItemColor: secondaryDark,
           unselectedItemColor: fontLight,
@@ -53,7 +57,7 @@ class _DashboardPageState extends State<DashboardPage> {
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/images/chart.svg",height:32,width:32,),
+              icon: SvgPicture.asset("assets/icons/chart.svg",height:32,width:32,),
               label: "Stat",
             ),
             BottomNavigationBarItem(
