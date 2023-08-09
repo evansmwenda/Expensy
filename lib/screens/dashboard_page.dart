@@ -2,6 +2,7 @@ import 'package:expensy/screens/add_transaction.dart';
 import 'package:expensy/screens/profile_tab.dart';
 import 'package:expensy/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'home_tab.dart';
 
@@ -19,7 +20,6 @@ class _DashboardPageState extends State<DashboardPage> {
 
 
     Widget buildTabContent(int index) {
-      print("running build ocntent $index");
       switch (index) {
         case 0:
           return const HomeTab();
@@ -49,25 +49,26 @@ class _DashboardPageState extends State<DashboardPage> {
           },
           items: [
             BottomNavigationBarItem(
-              icon: Image.asset("assets/icons/home-1.png"),
+              icon: SvgPicture.asset("assets/icons/home.svg",height:32,width:32,),
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: Image.asset("assets/icons/chart-vertical.png"),
+              icon: SvgPicture.asset("assets/images/chart.svg",height:32,width:32,),
               label: "Stat",
             ),
             BottomNavigationBarItem(
-              icon: Image.asset("assets/icons/wallet.png"),
+              icon: SvgPicture.asset("assets/icons/wallet.svg",height:32,width:32,),
               label: "Wallet",
             ),
             BottomNavigationBarItem(
-              icon: Image.asset("assets/icons/user-1.png"),
+              icon: SvgPicture.asset("assets/icons/user.svg",height:32,width:32,),
               label: "Profile",
             ),
           ],
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
+
           onPressed:(){
             Navigator.push(
               context,

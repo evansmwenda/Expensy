@@ -19,15 +19,17 @@ class HomeTab extends StatelessWidget {
               height: defaultSpacing / 2,
             ),
             ListTile(
-              title: Text("Hey, ${userdata.name}!"),
+              title: Text("Hey, ${userdata.name}!",style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                color: fontHeading,fontWeight: FontWeight.w500,
+              ),),
               leading: ClipRRect(
                 borderRadius: const BorderRadius.all(
                   Radius.circular(defaultRadius),
                 ),
-                child: Image.asset("assets/images/avatar.jpeg"),
+                child: Image.asset("assets/images/plus.png",height: 30,),
               ),
               trailing: Image.asset(
-                "assets/icons/bell.png",
+                "assets/icons/info-circle.png",
                 color: Colors.black,
               ),
             ),
@@ -41,6 +43,7 @@ class HomeTab extends StatelessWidget {
                     userdata.totalBalance,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           fontWeight: FontWeight.w800,
+                      color: fontDark,
                         ),
                   ),
                   const SizedBox(
@@ -51,7 +54,7 @@ class HomeTab extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .bodyLarge
-                        ?.copyWith(color: fontSubHeading),
+                        ?.copyWith(color: fontSubHeading,fontWeight: FontWeight.w600,fontSize:17,),
                   ),
                 ],
               ),
@@ -89,7 +92,7 @@ class HomeTab extends StatelessWidget {
             Text(
               "Recent Transactions",
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w600,color:fontDark,
                   ),
             ),
             const SizedBox(
@@ -99,6 +102,8 @@ class HomeTab extends StatelessWidget {
               "Today",
               style: TextStyle(
                 color: fontSubHeading,
+                fontSize: 17,
+                fontWeight: FontWeight.w500,
               ),
             ),
 

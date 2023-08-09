@@ -50,9 +50,9 @@ class IncomeExpenseCard extends StatelessWidget {
                       ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: defaultSpacing / 3 ),
+                  padding: const EdgeInsets.only(top: defaultSpacing / 3),
                   child: Text(
-                    expenseData.amount,
+                    "KES ${expenseData.amount}",
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
@@ -62,7 +62,10 @@ class IncomeExpenseCard extends StatelessWidget {
               ],
             ),
           ),
-          Icon(expenseData.icon,color: Colors.white,),
+          Icon(
+            expenseData.icon,
+            color: Colors.white,
+          ),
         ],
       ),
     );
