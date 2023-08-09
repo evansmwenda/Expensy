@@ -1,3 +1,4 @@
+import 'package:expensy/screens/add_transaction.dart';
 import 'package:expensy/screens/profile_tab.dart';
 import 'package:expensy/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'home_tab.dart';
 
 class DashboardPage extends StatefulWidget {
-  var currentIndex = 3;
+  var currentIndex = 0;
    DashboardPage({super.key});
 
   @override
@@ -64,6 +65,16 @@ class _DashboardPageState extends State<DashboardPage> {
               label: "Profile",
             ),
           ],
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed:(){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AddTransaction()),);
+          },
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
         ),
       ),
     );
