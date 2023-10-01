@@ -1,5 +1,6 @@
 import 'package:expensy/screens/add_transaction.dart';
 import 'package:expensy/screens/profile_tab.dart';
+import 'package:expensy/screens/stats_page.dart';
 import 'package:expensy/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -24,7 +25,7 @@ class _DashboardPageState extends State<DashboardPage> {
         case 0:
           return const HomeTab();
         case 1:
-          return Container();
+          return const StatsPage();
         case 2:
           return Container();
         case 3:

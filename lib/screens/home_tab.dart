@@ -41,7 +41,7 @@ class HomeTab extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    userdata.totalBalance,
+                    "\$ ${userdata.totalBalance}",
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           fontWeight: FontWeight.w800,
                       color: fontDark,

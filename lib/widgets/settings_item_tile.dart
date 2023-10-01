@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../utils/constants.dart';
 
 class SettingsItemTile extends StatelessWidget {
   final String title;
   final String? subtitle;
-  final String imageUrl;
+  final String assetUrl;
   const SettingsItemTile(
-      {super.key, required this.title, required this.imageUrl, this.subtitle});
+      {super.key, required this.title, required this.assetUrl, this.subtitle});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: Padding(
         padding: const EdgeInsets.only(left: 2),
-        child: Image.asset(imageUrl,color: fontSubHeading),
+        child: SvgPicture.asset(assetUrl,height:20,width:20,color: fontSubHeading),
       ),
       title: Text(
         title,
@@ -39,9 +40,9 @@ class SettingsItemTile extends StatelessWidget {
 
 class AccountsItemTile extends StatelessWidget {
   final String title;
-  final String imageUrl;
+  final String assetUrl;
   const AccountsItemTile(
-      {super.key, required this.title, required this.imageUrl,});
+      {super.key, required this.title, required this.assetUrl,});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class AccountsItemTile extends StatelessWidget {
         dense: true,
         leading: Padding(
           padding: const EdgeInsets.only(left: 2),
-          child: Image.asset(imageUrl,color: fontSubHeading,),
+          child: SvgPicture.asset(assetUrl,height:18,width:18,color: fontSubHeading),
         ),
         title: Text(
           title,

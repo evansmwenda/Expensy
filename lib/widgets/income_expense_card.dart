@@ -52,7 +52,8 @@ class IncomeExpenseCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: defaultSpacing / 3),
                   child: Text(
-                    "KES ${expenseData.amount}",
+                    expenseData.label == "Expense"  ? "- \$ ${expenseData.amount}" :
+                        "\$ ${expenseData.amount}",
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,

@@ -31,7 +31,7 @@ class ProfileTab extends StatelessWidget {
                       Flexible(
                         child: ClipRRect(
                             borderRadius: const BorderRadius.all(Radius.circular(defaultRadius)),
-                            child: Image.asset("assets/images/avatar.jpeg",width: 130,)),
+                            child: Image.asset("assets/images/notification.png",width: 130,)),
                       ),
                       Text("Jacob Timeberline",style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700,color: fontHeading,),),
                       Text("jacobtimber@gmail.com",style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: fontSubHeading,),),
@@ -55,12 +55,12 @@ class ProfileTab extends StatelessWidget {
                     ),
                     // const SizedBox(height: defaultSpacing,),
                     const SettingsItemTile(
-                      imageUrl: "assets/icons/location-1.png",
+                      assetUrl: "assets/icons/location-outline.svg",
                       title: "Bank Location",
                       subtitle: "7307, Grant Avenue, Flashing NY23563",
                     ),
                     const SettingsItemTile(
-                      imageUrl: "assets/icons/wallet.png",
+                      assetUrl: "assets/icons/wallet.svg",
                       title: "My Wallet",
                       subtitle: "Manage your saved wallet",
                     ),
@@ -75,20 +75,20 @@ class ProfileTab extends StatelessWidget {
                       ),
                     ),
                     const AccountsItemTile(
-                      imageUrl: "assets/icons/user-1.png",
+                      assetUrl: "assets/icons/user.svg",
                       title: "My Account",
                       // subtitle: "test",
                     ),
                     const AccountsItemTile(
-                      imageUrl: "assets/icons/bell.png",
+                      assetUrl: "assets/icons/notifications-outline.svg",
                       title: "Notification",
                     ),
                     const AccountsItemTile(
-                      imageUrl: "assets/icons/lock-on.png",
+                      assetUrl: "assets/icons/lock-closed-outline.svg",
                       title: "Privacy",
                     ),
                     const AccountsItemTile(
-                      imageUrl: "assets/icons/info-circle.png",
+                      assetUrl: "assets/icons/info-circle.svg",
                       title: "About",
                     ),
                   ],

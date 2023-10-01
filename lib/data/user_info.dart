@@ -116,7 +116,7 @@ List<Transaction> transactions2 = [
 
 final userdata = UserInfo(
     name: "Mwenda",
-    totalBalance: "KES 4,500",
+    totalBalance: "4,500",
     inflow: "400",
     outflow: "500",
     transactions: transactions,
