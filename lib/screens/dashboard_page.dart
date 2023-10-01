@@ -44,7 +44,7 @@ class _DashboardPageState extends State<DashboardPage> {
           currentIndex: widget.currentIndex,
           selectedItemColor: secondaryDark,
           unselectedItemColor: fontLight,
-          selectedLabelStyle: TextStyle(fontSize: 13),
+          selectedLabelStyle: const TextStyle(fontSize: 13),
           onTap: (index) {
             setState(() {
               widget.currentIndex = index;
@@ -53,30 +53,29 @@ class _DashboardPageState extends State<DashboardPage> {
           },
           items: [
             BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/home.svg",height:32,width:32,),
+              icon: SvgPicture.asset("assets/icons/home.svg",height:22,width:22,),
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/chart.svg",height:32,width:32,),
+              icon: SvgPicture.asset("assets/icons/chart.svg",height:22,width:22,),
               label: "Stat",
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/wallet.svg",height:32,width:32,),
+              icon: SvgPicture.asset("assets/icons/wallet.svg",height:22,width:22,),
               label: "Wallet",
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/user.svg",height:32,width:32,),
+              icon: SvgPicture.asset("assets/icons/user.svg",height:22,width:22,),
               label: "Profile",
             ),
           ],
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
         floatingActionButton: FloatingActionButton(
-
           onPressed:(){
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => AddTransaction()),);
+              MaterialPageRoute(builder: (context) => const AddTransaction()),);
           },
           tooltip: 'Increment',
           child: const Icon(Icons.add),
